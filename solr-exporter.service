@@ -1,12 +1,18 @@
 [Unit]
 Description=Solr Prometheus Exporter
 Wants=network-online.target
+Wamts=prometheus.service
+Wants=riak.service
+After=riak.service
 After=network-online.target
 
 [Service]
 
 User=root
-ExecStart=/var/lib/prometheus/exporters/solr_exporter/bin/solr_exporter -p 9854 -b http://localhost:8983/solr -f ./conf/solr-exporter-config.xml --num-threads 8
+ExecStart=/var/lib/prometheus/exporters/solr_exporter/bin/solr-exporter --port 9854  \
+                                                                        --baseurl http://localhost:8983/solr \
+                                                                        --config-file ../conf/solr-exporter-config.xml \
+                                                                        --num-threads 8
 
 [Install]
 WantedBy=default.target
