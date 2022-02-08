@@ -3,7 +3,7 @@ Solr Prometheus Exporter
 
 Directory structure
 -------------------
-solr_exporter/exporter/
+```solr_exporter/exporter/
 ├── README.txt
 ├── bin
 │   ├── solr-exporter
@@ -14,6 +14,7 @@ solr_exporter/exporter/
 ├── dist __moved as mentioned in item 2 below__
 ├── lib
 └── lucene-libs
+```
 
 
 1. The solr exporter can be found in a [solr-7.3.1 binary distribution](https://archive.apache.org/dist/lucene/solr/7.3.1/solr-7.3.1.tgz) at `${BASE_DIR}/solr-7.3.1/contrib/prometheus-exporter`. Or, if you're in the mood to type, in a riak build tree after `make rel` in `${BUILD_DIR}/riak/_build/rel/lib/yokozuna/build/solr-7.3.1/contrib/prometheus-exporter`.
