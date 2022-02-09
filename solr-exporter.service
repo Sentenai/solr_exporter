@@ -12,7 +12,7 @@ User=root
 ExecStart=/var/lib/prometheus/exporters/solr_exporter/bin/solr-exporter --port 9854  \
                                                                         --baseurl http://localhost:8983/solr \
                                                                         --config-file ../conf/solr-exporter-config.xml \
-                                                                        --num-threads 8
+                                                                        --num-threads 4
 
 [Install]
 WantedBy=default.target
