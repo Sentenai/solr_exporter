@@ -6,8 +6,8 @@ After=riak.service
 After=network-online.target
 
 [Service]
+User=exporter
 Type=simple
-User=root
 ExecStart=/var/lib/prometheus/solr_exporter/bin/solr-exporter --port 9854  \
                                                               --baseurl http://localhost:8983/solr \
                                                               --config-file ../conf/solr-exporter-config.xml \
