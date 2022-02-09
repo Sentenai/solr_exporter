@@ -3,11 +3,13 @@ Description=Solr Prometheus Exporter
 Wants=network-online.target
 Wants=riak.service
 After=riak.service
+Wants=network-online.target
 After=network-online.target
 
 [Service]
 User=exporter
 Type=simple
+EnvironmentFile=/etc/sysconfig/solr_exporter
 ExecStart=/var/lib/prometheus/solr_exporter/bin/solr-exporter --port 9854  \
                                                               --baseurl http://localhost:8983/solr \
                                                               --config-file ../conf/solr-exporter-config.xml \
