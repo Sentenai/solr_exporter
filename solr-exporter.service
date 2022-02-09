@@ -1,7 +1,6 @@
 [Unit]
 Description=Solr Prometheus Exporter
 Wants=network-online.target
-Wamts=prometheus.service
 Wants=riak.service
 After=riak.service
 After=network-online.target
